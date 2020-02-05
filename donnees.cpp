@@ -14,6 +14,7 @@ Donnees::Donnees() {
 		for (unsigned int j = 0; j < 13; j++) {
 
 			paquetDeCarte[positionTableau].InitialiserCarte(j + 1, atout[i]);
+			positionTableau++;
 
 		}
 

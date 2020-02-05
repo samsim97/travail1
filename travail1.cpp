@@ -11,6 +11,8 @@ Donnees leJeu;
 
 void InitialiserJoueurs(Joueur * aJoueur1, Joueur * aJoueur2);
 void Jouer();
+void donnerLesCartesAuxJoueurs(int aNombreCartesParJoueur);
+void afficherLesCartesEtJoueur();
 
 int main() 
 {
@@ -44,6 +46,8 @@ void Jouer()
 	}
 
 	leJeu.melangerPaquetDeCarte();
+	donnerLesCartesAuxJoueurs(nombreCarteParJoueur);
+	afficherLesCartesEtJoueur();
 
 }
 
@@ -82,5 +86,31 @@ void donnerLesCartesAuxJoueurs(int aNombreCartesParJoueur) {
 			}
 		}
 	}
+}
 
+void afficherLesCartesEtJoueur() {
+
+	ClrScr();
+
+	cout << "     " << leJeu.getJoueur(1)->getNom() << "                " << leJeu.getJoueur(2)->getNom();
+
+	unsigned int noJoueur = 1;
+	unsigned int i = 0;
+
+	while (leJeu.getJoueur(noJoueur)->getCarte(i) != NULL) {
+
+		leJeu.getJoueur(noJoueur)->getCarte(i)->Afficher(5, (i + 2));
+		i++;
+
+	}
+	noJoueur++;
+	i = 0;
+
+	while (leJeu.getJoueur(noJoueur)->getCarte(i) != NULL) {
+
+		leJeu.getJoueur(noJoueur)->getCarte(i)->Afficher(25, (i + 2));
+		i++;
+
+	}
+	cout << endl;
 }

@@ -44,11 +44,17 @@ string Joueur::getNom() const {
 
 }
 
+Carte * Joueur::getCarte(int aIndex) {
+
+	return mainDuJoueur[aIndex];
+
+}
+
 void Joueur::ajouterCarteDansMain(Carte * aCarte) {
 
 	int position = 0;
 
-	while ((mainDuJoueur[position] == NULL) && (position < 26)) {
+	while (mainDuJoueur[position] != NULL) {
 
 		position++;
 
