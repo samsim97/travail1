@@ -14,6 +14,8 @@ void Jouer();
 
 int main() 
 {
+	srand(time(NULL));
+
 	char fini = 'n';
 	srand((unsigned)time(NULL));
 	InitialiserJoueurs();
@@ -21,7 +23,7 @@ int main()
 	{
 		Jouer();
 		cout << "\nTermine (n/o) ? ";
-		cin >> fini;		
+		cin >> fini;
 	}
 }
 
