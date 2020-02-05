@@ -38,6 +38,12 @@ void Joueur::setNom(string aNom) {
 
 }
 
+string Joueur::getNom() const {
+
+	return nom;
+
+}
+
 void Joueur::ajouterCarteDansMain(Carte * aCarte, Joueur * aJoueur) {
 
 	int position = 0;
