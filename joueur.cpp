@@ -37,3 +37,30 @@ void Joueur::setNom(string aNom) {
 	}
 
 }
+
+void Joueur::ajouterCarteDansMain(Carte * aCarte, Joueur * aJoueur) {
+
+	int position = 0;
+
+	while ((mainDuJoueur[position] == NULL) && (position < 26)) {
+
+		position++;
+
+	}
+
+	mainDuJoueur[position] = aCarte;
+
+}
+
+void Joueur::supprimerMainDuJoueur(Joueur * aJoueur) {
+
+	int position = 0;
+
+	while (mainDuJoueur[position] != NULL) {
+
+		mainDuJoueur[position] = NULL;
+		position++;
+
+	}
+
+}

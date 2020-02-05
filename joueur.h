@@ -23,5 +23,7 @@ public:
 
 	/* Methodes */
 	void setNom(string aNom);
+	void ajouterCarteDansMain(Carte * aCarte, Joueur* aJoueur);
+	void supprimerMainDuJoueur(Joueur * aJoueur);
 };
 #endif
