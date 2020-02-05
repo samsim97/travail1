@@ -2,8 +2,8 @@
 
 Donnees::Donnees() {
 
-	joueur1.setNom("");
-	joueur2.setNom("");
+	joueur1->setNom("");
+	joueur2->setNom("");
 
 	string atout[4] = {"pique","coeur","trefle","carreau"};
 
@@ -41,5 +41,40 @@ void Donnees::melangerPaquetDeCarte() {
 		paquetDeCarte[deuxiemePosition] = lCarteTemporaire;
 
 	}
+
+}
+
+void Donnees::setJoueur(int aNumeroJoueur, Joueur * aJoueur) {
+
+	if (aNumeroJoueur == 1) {
+
+		joueur1 = aJoueur;
+
+	}
+	else if (aNumeroJoueur == 2) {
+
+		joueur2 = aJoueur;
+
+	}
+
+}
+
+Joueur * Donnees::getJoueur(int aNumeroJoueur) {
+
+	if (aNumeroJoueur == 1) {
+
+		return joueur1;
+
+	}
+	else if (aNumeroJoueur == 2) {
+
+		return joueur2;
+
+	}
+}
+
+Carte* Donnees::getCarte(int aIndex) {
+
+	return &paquetDeCarte[aIndex];
 
 }

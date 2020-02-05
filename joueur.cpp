@@ -44,7 +44,7 @@ string Joueur::getNom() const {
 
 }
 
-void Joueur::ajouterCarteDansMain(Carte * aCarte, Joueur * aJoueur) {
+void Joueur::ajouterCarteDansMain(Carte * aCarte) {
 
 	int position = 0;
 

@@ -31,6 +31,19 @@ int main()
 
 void Jouer() 
 {
+	int nombreCarteParJoueur = 0;
+
+	cout << "\nCombien de cartes chque joueur recevra? (max de 26 par joueur) ";
+	cin >> nombreCarteParJoueur;
+
+	if (nombreCarteParJoueur <= 0 && nombreCarteParJoueur > 26) {
+
+		cout << "Le nombre de cartes doit etre plus grand que 0 et plus petit ou egal a 26";
+		Jouer();
+
+	}
+
+	leJeu.melangerPaquetDeCarte();
 
 }
 
@@ -45,5 +58,29 @@ void InitialiserJoueurs(Joueur * aJoueur1, Joueur * aJoueur2)
 
 	aJoueur1->setNom(nomJoueur1);
 	aJoueur2->setNom(nomJoueur2);
+
+	leJeu.setJoueur(1, aJoueur1);
+	leJeu.setJoueur(2, aJoueur2);
+
+}
+
+void donnerLesCartesAuxJoueurs(int aNombreCartesParJoueur) {
+
+	for (unsigned int i = 1; i <= 2; i++) {
+
+		for (unsigned int j = 0; j < aNombreCartesParJoueur; j++) {
+
+			if (i == 1) {
+
+				leJeu.getJoueur(i)->ajouterCarteDansMain(leJeu.getCarte(j));
+
+			}
+			else {
+
+				leJeu.getJoueur(i)->ajouterCarteDansMain(leJeu.getCarte(j + aNombreCartesParJoueur));
+
+			}
+		}
+	}
 
 }
